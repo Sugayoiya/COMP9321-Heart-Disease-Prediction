@@ -12,7 +12,7 @@ from test import *
 import numpy as np
 
 app = Flask(__name__)
-api = Api(app, default = "comp9321-Project3",title= "Wine Price prediction", description="Our api is used to provide functions of wine")
+api = Api(app, default = "comp9321-Project3",title= "heart disease prediction", description="predict the heart disease")
 
 argument = {1:'age',2:'sex',3:'cpt',4:'rbp',5:'sc',6:'fbs',7:'rer',8:'mhr',9:'eia',10:'op',11:'sts',12:'mv',13:'thal'}
 fake_factors = get_important_factors_list() # from machine learning 
