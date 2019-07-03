@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>visulization</title>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        h1 {
+        font-size:50px;
+        color:#cc0066;
+        text-align:center;
+        margin-top:50px;
+    }
+    h2 {
+        text-align:center;
+    }
+    h3 {
+        text-align:center;
+    }
+    #back{
+            margin-left: 5%;
+            margin-top:1%;
+        }
+        #comments {
+
+            font-size:20px;
+            color: black;
+            text-align: center;
+        }
+        #add {
+            text-align: center;
+        }
+
+        a {
+            font-size: 20px;
+        }
+        a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:visited {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>visulization</h1>
+    <h2>COMP9321 group project</h2>
+    
+    <!-- <img src="{{ user_image1 }}" alt="User Image">
+    <img src="{{ user_image2 }}" alt="User Image">
+    <img src="{{ user_image3 }}" alt="User Image">
+    <img src="{{ user_image4 }}" alt="User Image">
+    <img src="{{ user_image5 }}" alt="User Image">
+    <img src="{{ user_image6 }}" alt="User Image">
+    <img src="{{ user_image7 }}" alt="User Image">
+    <img src="{{ user_image8 }}" alt="User Image">
+    <img src="{{ user_image9 }}" alt="User Image">
+    <img src="{{ user_image10 }}" alt="User Image">
+    <img src="{{ user_image11 }}" alt="User Image"> -->
+    {% if results %}
+        <table align="center">
+            <tbody>
+            {% for img_name in results %}
+                <tr>
+                    <!-- <td>{{ img_name }}</td> -->
+                    <td><img src="/static/pic/{{ img_name }}" alt="{{ img_name }}"></td>
+                </tr>
+                <p></p>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        No results :(
+    {% endif %}
+
+    <p></p>
+    <div class="pred" style="text-align: center;">
+
+        <a href="/main/prediction" target="_blank"  id="first">Prediction</a>&nbsp;&nbsp;
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Prediction Model</title>
+    <style>
+        body {
+            background-color:aliceblue;
+        }
+        h1 {
+            font-size:50px;
+            color:#cc0066;
+            text-align:center;
+        }
+        h2 {
+            font-size:40px;
+            color:#8e0811;
+            margin-top:5%;
+            text-align: center;
+        }
+        h3 {
+            font-size:40px;
+            color:#ff0811;
+            margin-top:5%;
+            text-align: center;
+        }
+        #back{
+            margin-left: 5%;
+            margin-top:5%;
+        }
+        #pred {
+
+            font-size:20px;
+            color: black;
+            text-align: center;
+        }
+        #first {
+            margin-left: 37%;
+        }
+        a {
+            font-size: 20px;
+        }
+        a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:visited {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Heart Disease Prediction Model</h1>
+        {% if results %}
+        <table align="center">
+            <tbody>
+            The first two graph shows the results from pre-processing data. The first checks the target data for an imbalance of 1's and 0's. The latter bar graph shows the result of each attributes importance to the machine model. This was achieved using chi-squared method allowing a weightage to be attributed to each feature. The cutoff point chosen was 10 to maximise accuracy. Attributes that scored lower than the aforementioned value was dropped/ignored by the machine learning model.
+
+            {% for img_name in result[:2] %}
+                <tr>
+                    <td>{{ img_name.split('.')[0] }}</td>
+                    <td align="center"><img src="/static/predict/{{ img_name }}" alt="{{ img_name }}"></td>
+                </tr>
+                <p></p>
+    
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+
+        <table align="center">
+            <tbody>
+        The machine learning model used for this project was logistic regression. Below are the results depicted for visual representation. The accuracy against iteration graph shows the accuracy achieved by the model given the number of epoch. It converges after a point and thus the number of epoch was decided to be 100 as it achieved convergence at this stage. Cross validation was also done to achieve a more true accuracy for the model and the same graph was plotted to reflect the true accuracy. Further inspection into the machine learning model allowed us to further produce the following graphs namely; the confusion matrix and the ROC curve of the model.
+
+            {% for img_name in result[2:] %}
+                <tr>
+                    <td>{{ img_name.split('.')[0] }}</td>
+                    <td align="center"><img src="/static/predict/{{ img_name }}" alt="{{ img_name }}"></td>
+                </tr>
+                <p></p>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            No results :(
+        {% endif %}
+        <h3>The Kfold score is {{ kfold }}</h3>
+        <p></p>
+        <h2>Please input the attributes: </h2>
+        <form action="/main/prediction_result" autocomplete="off" id="pred">
+            {% if results %}
+            <table align="center">
+            <tbody>
+            {% for name in results %}
+                <tr>
+                    <!-- <td>{{ img_name }}</td> -->
+                    <td>{{ name[1] }} : <input type="text" name="{{ name[0] }}"  size="20" value="0"><br></td>
+                </tr>
+                <p></p>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                No results :(
+            {% endif %}
+            <!-- age : <input type="text" name="age"  size="20" value="0"><br>
+            sex : <input type="text" name="sex"  size="20" value="male"><br>
+            chest pain type : <input type="text" name="cpt"  size="20" value="typical angin"><br>
+            resting blood pressure : <input type="text" name="rbp"  size="20" value="0"><br>
+            serum cholestoral in mg/dl : <input type="text" name="sc"  size="20" value="0"><br>
+            fasting blood sugarr > 120 mg/dl : <input type="text" name="fbs"  size="20" value="0"><br>
+            resting electrocardiographic results : <input type="text" name="rer"  size="20" value="0"><br>
+            maximum heart rate achieved : <input type="text" name="mhr"  size="20" value="0"><br>
+            exercise induced angina : <input type="text" name="eia"  size="20" value="0"><br>
+            oldpeak = ST depression induced by exercise relative to rest: <input type="text" name="op"  size="20" value="0"><br>
+            the slope of the peak exercise ST segment : <input type="text" name="sts"  size="20" value="0"><br>
+            number of major vessels (0-3) colored by ﬂourosopy : <input type="text" name="mv"  size="20" value="0"><br>
+            thal(Thalassemia) : <input type="text" name="thal"  size="20" value="3"><br> -->
+        &nbsp;&nbsp;&nbsp;&nbsp;        <input type="submit"  value="Predict">
+
+
+
+        </form>
+    </div>
+    <br>
+
+
+</body>
+</html>
