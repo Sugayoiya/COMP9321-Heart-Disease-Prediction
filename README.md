@@ -1,11 +1,11 @@
 # Project-Heart-Disease
 predict heart disease(full stack project)
 
-prerequisite:
+**prerequisite:**
 
 python3,flask,flask_bootstrap,flask_restplus,requests,
 
-usage:
+**usage:**
 
 command line
 terminal 1:
