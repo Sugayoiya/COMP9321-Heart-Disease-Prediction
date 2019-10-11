@@ -3,7 +3,11 @@ predict heart disease(full stack project)
 
 **prerequisite:**
 
-python3,flask,flask_bootstrap,flask_restplus,requests,
+`python3
+flask
+flask_bootstrap
+flask_restplus
+requests`
 
 **usage:**
 
