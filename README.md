@@ -40,3 +40,18 @@ ventricular hypertrophy by Estes’ criteria)
 12. number of major vessels (0-3) colored by flourosopy
 13. thal(Thalassemia): 3 = normal; 6 = fixed defect; 7 = reversable defect
 14. target: have disease or not (0=no,otherwise yes).
+
+main page:
+
+![alt text](https://github.com/mokomokoo/COMP9321-Heart-Disease-Prediction/blob/master/main.png)
+
+visulization page:
+
+![alt text](https://github.com/mokomokoo/COMP9321-Heart-Disease-Prediction/blob/master/visu1.png)
+![alt text](https://github.com/mokomokoo/COMP9321-Heart-Disease-Prediction/blob/master/visu2.png)
+
+predictions: 
+![alt text](https://github.com/mokomokoo/COMP9321-Heart-Disease-Prediction/blob/master/pre1.png)
+![alt text](https://github.com/mokomokoo/COMP9321-Heart-Disease-Prediction/blob/master/pre2.png)
+![alt text](https://github.com/mokomokoo/COMP9321-Heart-Disease-Prediction/blob/master/pre3.png)
+![alt text](https://github.com/mokomokoo/COMP9321-Heart-Disease-Prediction/blob/master/pre4.png)
